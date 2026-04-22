@@ -1,0 +1,58 @@
+---
+import { useTranslations } from '../i18n';
+import type { Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section id="access" class="section-anchor py-20 md:py-28">
+  <div class="mx-auto max-w-6xl px-4 grid gap-10 lg:grid-cols-2">
+    <div>
+      <p class="text-xs tracking-[0.25em] text-forest-600 font-medium">07 / ACCESS</p>
+      <h2 class="mt-2 text-3xl md:text-4xl font-bold text-forest-900">{t.access.heading}</h2>
+      <dl class="mt-6 space-y-4 text-bark/85">
+        <div>
+          <dt class="text-xs font-mono text-forest-500">ADDRESS</dt>
+          <dd class="mt-1">{t.access.address}</dd>
+        </div>
+        <div>
+          <dt class="text-xs font-mono text-forest-500">TRANSPORT</dt>
+          <dd class="mt-1">{t.access.transport}</dd>
+        </div>
+      </dl>
+
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a
+          href={t.access.officialLinkUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center px-4 py-2 rounded-full bg-forest-700 text-white text-sm font-medium hover:bg-forest-800 transition-colors"
+        >
+          {t.access.officialLinkLabel} ↗
+        </a>
+        <a
+          href={t.access.mapUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center px-4 py-2 rounded-full bg-white text-forest-800 text-sm font-medium border border-forest-200 hover:bg-forest-50 transition-colors"
+        >
+          {t.access.mapLabel} ↗
+        </a>
+      </div>
+    </div>
+
+    <div class="rounded-2xl overflow-hidden border border-forest-100 shadow-sm aspect-[4/3]">
+      <iframe
+        title="Kamiyama College of Technology map"
+        src="https://www.google.com/maps?q=%E7%A5%9E%E5%B1%B1%E3%81%BE%E3%82%8B%E3%81%94%E3%81%A8%E9%AB%98%E5%B0%82&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        class="w-full h-full border-0"
+      ></iframe>
+    </div>
+  </div>
+</section>
