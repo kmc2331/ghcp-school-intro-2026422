@@ -1,0 +1,30 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Hero from '~/components/sections/Hero.astro';
+import About from '~/components/sections/About.astro';
+import Curriculum from '~/components/sections/Curriculum.astro';
+import Gallery from '~/components/sections/Gallery.astro';
+import Faculty from '~/components/sections/Faculty.astro';
+import Admissions from '~/components/sections/Admissions.astro';
+import Access from '~/components/sections/Access.astro';
+import News from '~/components/sections/News.astro';
+import ContactCTA from '~/components/sections/ContactCTA.astro';
+import { getDict } from '~/i18n/utils';
+
+const lang = 'en' as const;
+const d = getDict(lang);
+---
+<BaseLayout lang={lang}>
+  <div class="bg-moss2 text-mist text-center text-xs py-2 px-4">
+    {d.disclaimer}
+  </div>
+  <Hero lang={lang} />
+  <About lang={lang} />
+  <Curriculum lang={lang} />
+  <Gallery lang={lang} />
+  <Faculty lang={lang} />
+  <Admissions lang={lang} />
+  <Access lang={lang} />
+  <News lang={lang} />
+  <ContactCTA lang={lang} />
+</BaseLayout>

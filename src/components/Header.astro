@@ -1,0 +1,48 @@
+---
+import { getDict, localizedPath, type Lang } from '~/i18n/utils';
+import LangToggle from '~/components/LangToggle.astro';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = getDict(lang);
+const nav = [
+  { key: 'about', href: '#about' },
+  { key: 'curriculum', href: '#curriculum' },
+  { key: 'campus', href: '#campus' },
+  { key: 'faculty', href: '#faculty' },
+  { key: 'admissions', href: '#admissions' },
+  { key: 'access', href: '#access' },
+  { key: 'news', href: '#news' },
+] as const;
+const home = localizedPath(lang, '/');
+---
+<header
+  data-site-header
+  class="fixed top-0 inset-x-0 z-50 transition-colors duration-300 [&.is-scrolled]:bg-mist/90 [&.is-scrolled]:backdrop-blur-md [&.is-scrolled]:shadow-[0_1px_0_rgba(63,46,30,0.06)]"
+>
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 h-16 flex items-center justify-between">
+    <a href={home} class="flex items-center gap-2 group">
+      <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M2 26 L10 12 L16 20 L22 8 L30 26 Z" fill="#3E5A33" />
+        <circle cx="24" cy="6" r="2.5" fill="#E8DFCF" />
+      </svg>
+      <span class="font-display text-base sm:text-lg tracking-wide text-bark group-hover:text-moss2 transition-colors">
+        Kamiyama <span class="text-moss2">Marugoto</span>
+      </span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-7 text-sm">
+      {nav.map((item) => (
+        <a href={item.href} class="nav-link text-bark/80 hover:text-bark">{d.nav[item.key]}</a>
+      ))}
+    </nav>
+    <div class="flex items-center gap-4">
+      <a href="#contact" class="hidden sm:inline-flex items-center gap-2 rounded-full bg-bark text-mist px-4 py-2 text-sm hover:bg-moss2 transition-colors">
+        {d.nav.contact}
+      </a>
+      <LangToggle lang={lang} />
+    </div>
+  </div>
+</header>
+<style>
+  [data-site-header] { background: transparent; color: var(--color-bark); }
+</style>

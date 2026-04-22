@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kmc2331.github.io/ghcp-school-intro-2026422/sitemap-index.xml

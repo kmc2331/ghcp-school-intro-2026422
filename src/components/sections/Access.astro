@@ -1,0 +1,37 @@
+---
+import { getDict, type Lang } from '~/i18n/utils';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = getDict(lang);
+---
+<section id="access" class="relative bg-sand py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 sm:px-10 grid gap-12 lg:grid-cols-2 items-center">
+    <div class="reveal">
+      <p class="kicker">{d.access.kicker}</p>
+      <h2 class="mt-3 text-3xl sm:text-4xl lg:text-5xl leading-tight">{d.access.title}</h2>
+      <dl class="mt-8 space-y-5 text-sm">
+        <div>
+          <dt class="font-medium text-bark">{d.access.labels.address}</dt>
+          <dd class="mt-1 text-stone">{d.access.address}</dd>
+        </div>
+        <div>
+          <dt class="font-medium text-bark">{d.access.labels.byCar}</dt>
+          <dd class="mt-1 text-stone">{d.access.byCar}</dd>
+        </div>
+        <div>
+          <dt class="font-medium text-bark">{d.access.labels.byBus}</dt>
+          <dd class="mt-1 text-stone">{d.access.byBus}</dd>
+        </div>
+      </dl>
+    </div>
+    <div class="reveal rounded-organic overflow-hidden shadow-md aspect-[4/3] bg-mist">
+      <iframe
+        title="Map of Kamiyama"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=134.30%2C33.94%2C134.42%2C34.02&layer=mapnik&marker=33.97%2C134.36"
+        class="w-full h-full border-0"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </div>
+</section>

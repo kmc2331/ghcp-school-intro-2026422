@@ -1,0 +1,43 @@
+---
+import { getDict, type Lang } from '~/i18n/utils';
+import { Icon } from 'astro-icon/components';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = getDict(lang);
+const iconMap: Record<string, string> = {
+  cpu: 'lucide:cpu',
+  palette: 'lucide:palette',
+  rocket: 'lucide:rocket',
+};
+---
+<section id="curriculum" class="relative bg-sand py-24 sm:py-32 overflow-hidden">
+  <!-- organic blob -->
+  <svg class="absolute -top-24 -left-24 w-[480px] opacity-40" viewBox="0 0 600 600" aria-hidden="true">
+    <path fill="#5C7A4E" d="M421.3,316Q372,382,304.5,422.5Q237,463,170.5,415.5Q104,368,93.5,294Q83,220,140,168.5Q197,117,272,108Q347,99,407.5,151.5Q468,204,470.5,302Q473,400,421.3,316Z"/>
+  </svg>
+  <svg class="absolute -bottom-24 -right-24 w-[420px] opacity-30" viewBox="0 0 600 600" aria-hidden="true">
+    <path fill="#3F2E1E" d="M438,318Q398,386,330,418Q262,450,191,418Q120,386,108,308Q96,230,150,165.5Q204,101,283.5,99Q363,97,418,158Q473,219,469,279.5Q465,340,438,318Z"/>
+  </svg>
+
+  <div class="relative mx-auto max-w-7xl px-6 sm:px-10">
+    <div class="max-w-2xl reveal">
+      <p class="kicker">{d.curriculum.kicker}</p>
+      <h2 class="mt-3 text-3xl sm:text-4xl lg:text-5xl leading-tight">{d.curriculum.title}</h2>
+      <p class="mt-5 text-stone leading-relaxed">{d.curriculum.lead}</p>
+    </div>
+    <div class="mt-14 grid md:grid-cols-3 gap-6">
+      {d.curriculum.items.map((it, i) => (
+        <article class="reveal group relative rounded-organic bg-mist p-8 border border-bark/5 hover:-translate-y-1 transition-transform duration-300 shadow-[0_4px_20px_rgba(63,46,30,0.04)]">
+          <div class="flex items-center justify-between">
+            <div class="rounded-full bg-moss2 text-mist w-12 h-12 inline-flex items-center justify-center">
+              <Icon name={iconMap[it.icon] ?? 'lucide:sparkles'} size={22} />
+            </div>
+            <span class="font-display text-stone/40 text-2xl">0{i + 1}</span>
+          </div>
+          <h3 class="mt-6 text-xl font-medium">{it.title}</h3>
+          <p class="mt-3 text-sm text-stone leading-relaxed">{it.body}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

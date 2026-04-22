@@ -1,0 +1,40 @@
+---
+import { getDict, type Lang } from '~/i18n/utils';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = getDict(lang);
+const photos = [
+  { src: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=70', alt: 'Mountain valley' },
+  { src: 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=70', alt: 'Forest trail' },
+  { src: 'https://images.unsplash.com/photo-1500964757637-c85e8a162699?auto=format&fit=crop&w=1100&q=70', alt: 'Lake mist' },
+  { src: 'https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?auto=format&fit=crop&w=900&q=70', alt: 'Wooden architecture' },
+  { src: 'https://images.unsplash.com/photo-1493815793585-d94ccbc86df8?auto=format&fit=crop&w=1100&q=70', alt: 'Rural road' },
+  { src: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1100&q=70', alt: 'Ridge' },
+  { src: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1100&q=70', alt: 'Night sky over mountain' },
+  { src: 'https://images.unsplash.com/photo-1444858291040-58f756a3bdd6?auto=format&fit=crop&w=900&q=70', alt: 'Tea fields' },
+];
+---
+<section id="campus" class="relative bg-mist py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 sm:px-10">
+    <div class="flex items-end justify-between flex-wrap gap-6 reveal">
+      <div class="max-w-xl">
+        <p class="kicker">{d.campus.kicker}</p>
+        <h2 class="mt-3 text-3xl sm:text-4xl lg:text-5xl leading-tight">{d.campus.title}</h2>
+        <p class="mt-5 text-stone leading-relaxed">{d.campus.lead}</p>
+      </div>
+    </div>
+    <div class="mt-12 columns-1 sm:columns-2 lg:columns-3 gap-5 [column-fill:_balance]">
+      {photos.map((p, i) => (
+        <figure class={`reveal mb-5 break-inside-avoid overflow-hidden rounded-organic bg-sand ${i % 3 === 0 ? 'aspect-[4/5]' : i % 3 === 1 ? 'aspect-square' : 'aspect-[5/4]'}`}>
+          <img
+            src={p.src}
+            alt={p.alt}
+            loading="lazy"
+            decoding="async"
+            class="h-full w-full object-cover hover:scale-105 transition-transform duration-700"
+          />
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>

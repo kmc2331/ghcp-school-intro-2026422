@@ -1,0 +1,58 @@
+---
+import { getDict, type Lang } from '~/i18n/utils';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = getDict(lang);
+---
+<section class="relative isolate min-h-[92vh] flex items-end overflow-hidden bg-mist grain">
+  <!-- Mountain SVG backdrop -->
+  <svg
+    class="absolute inset-0 h-full w-full"
+    viewBox="0 0 1440 900"
+    preserveAspectRatio="xMidYMid slice"
+    aria-hidden="true"
+  >
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#F5F2EB" />
+        <stop offset="100%" stop-color="#E8DFCF" />
+      </linearGradient>
+      <linearGradient id="m1" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#7A7466" />
+        <stop offset="100%" stop-color="#5C7A4E" />
+      </linearGradient>
+      <linearGradient id="m2" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#5C7A4E" />
+        <stop offset="100%" stop-color="#3E5A33" />
+      </linearGradient>
+    </defs>
+    <rect width="1440" height="900" fill="url(#sky)" />
+    <!-- sun -->
+    <circle cx="1080" cy="220" r="120" fill="#F0E6D2" opacity="0.7" />
+    <!-- distant mountains -->
+    <path d="M0 600 L160 460 L300 540 L460 380 L640 520 L820 420 L1020 540 L1240 440 L1440 560 L1440 900 L0 900 Z" fill="url(#m1)" opacity="0.55" />
+    <!-- middle mountains -->
+    <path d="M0 720 L120 600 L260 700 L420 540 L600 680 L780 580 L960 700 L1160 600 L1320 720 L1440 660 L1440 900 L0 900 Z" fill="url(#m2)" opacity="0.85" />
+    <!-- foreground hills -->
+    <path d="M0 820 C200 760 380 880 600 820 C820 760 1040 880 1260 820 L1440 840 L1440 900 L0 900 Z" fill="#3F2E1E" />
+  </svg>
+
+  <div class="relative mx-auto max-w-7xl w-full px-6 sm:px-10 pb-20 sm:pb-28 pt-36">
+    <p class="kicker reveal">{d.hero.kicker}</p>
+    <h1 class="reveal mt-4 max-w-4xl text-mist text-4xl sm:text-6xl lg:text-7xl leading-[1.15] whitespace-pre-line drop-shadow-[0_2px_24px_rgba(0,0,0,0.25)]">
+      {d.hero.title}
+    </h1>
+    <p class="reveal mt-6 max-w-xl text-mist/90 text-base sm:text-lg leading-relaxed whitespace-pre-line drop-shadow-[0_1px_8px_rgba(0,0,0,0.3)]">
+      {d.hero.lead}
+    </p>
+    <div class="reveal mt-10 flex flex-wrap gap-3">
+      <a href="#about" class="inline-flex items-center gap-2 rounded-full bg-mist text-bark px-6 py-3 text-sm font-medium hover:bg-sand transition-colors">
+        {d.hero.ctaPrimary}
+        <span aria-hidden="true">→</span>
+      </a>
+      <a href="#admissions" class="inline-flex items-center gap-2 rounded-full border border-mist/60 text-mist px-6 py-3 text-sm font-medium hover:bg-mist/10 transition-colors">
+        {d.hero.ctaSecondary}
+      </a>
+    </div>
+  </div>
+</section>
