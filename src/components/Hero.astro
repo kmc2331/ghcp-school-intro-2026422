@@ -1,0 +1,67 @@
+---
+import { useTranslations } from '../i18n';
+import type { Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section id="top" class="relative overflow-hidden">
+  <!-- 背景: 山と霧のグラデーション -->
+  <div class="absolute inset-0 -z-10">
+    <div
+      class="absolute inset-0"
+      style="background: linear-gradient(180deg, #cfe3d3 0%, #eef3ef 60%, #ffffff 100%);"
+    ></div>
+    <!-- 山シルエット -->
+    <svg
+      class="absolute bottom-0 left-0 w-full h-[55%]"
+      viewBox="0 0 1440 480"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M0,360 L160,260 L320,330 L500,180 L700,300 L900,200 L1100,310 L1280,230 L1440,320 L1440,480 L0,480 Z"
+        fill="#234f29"
+        opacity="0.85"
+      />
+      <path
+        d="M0,400 L180,330 L360,380 L560,290 L760,360 L960,300 L1160,370 L1320,310 L1440,360 L1440,480 L0,480 Z"
+        fill="#112814"
+        opacity="0.9"
+      />
+    </svg>
+    <div class="absolute inset-0 mist-overlay"></div>
+  </div>
+
+  <div class="mx-auto max-w-6xl px-4 pt-20 pb-32 md:pt-28 md:pb-44">
+    <p class="text-xs sm:text-sm tracking-[0.25em] text-forest-700/80 font-medium">
+      {t.hero.eyebrow}
+    </p>
+    <h1 class="mt-4 font-display font-bold text-4xl sm:text-5xl md:text-6xl leading-tight whitespace-pre-line text-forest-900">
+      {t.hero.title}
+    </h1>
+    <p class="mt-6 max-w-xl text-base sm:text-lg text-bark/80">
+      {t.hero.lead}
+    </p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a
+        href="#about"
+        class="inline-flex items-center px-5 py-2.5 rounded-full bg-forest-700 text-white font-medium hover:bg-forest-800 transition-colors"
+      >
+        {t.hero.primary}
+      </a>
+      <a
+        href={lang === 'ja' ? 'https://kamiyama.ac.jp/' : 'https://kamiyama.ac.jp/en/'}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center px-5 py-2.5 rounded-full bg-white/80 text-forest-800 font-medium border border-forest-200 hover:bg-white transition-colors"
+      >
+        {t.hero.secondary} ↗
+      </a>
+    </div>
+  </div>
+</section>

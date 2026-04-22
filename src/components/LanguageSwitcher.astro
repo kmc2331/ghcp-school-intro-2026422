@@ -1,0 +1,21 @@
+---
+import { useTranslations, localePath } from '../i18n';
+import type { Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const other: Lang = lang === 'ja' ? 'en' : 'ja';
+const otherLabel = other === 'ja' ? t.switcher.ja : t.switcher.en;
+---
+
+<a
+  href={localePath(other)}
+  class="inline-flex items-center text-xs font-medium px-2.5 py-1.5 rounded-full border border-forest-200 text-forest-700 hover:bg-forest-50 transition-colors"
+  aria-label={t.switcher.label}
+>
+  {otherLabel}
+</a>

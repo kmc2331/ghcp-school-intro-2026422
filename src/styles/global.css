@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Noto Serif JP", "Inter", ui-serif, Georgia, serif;
+
+  --color-forest-50: #f1f7f1;
+  --color-forest-100: #dcecdc;
+  --color-forest-200: #b6d7b6;
+  --color-forest-300: #88bb8a;
+  --color-forest-400: #5b9c61;
+  --color-forest-500: #3c8044;
+  --color-forest-600: #2d6635;
+  --color-forest-700: #234f29;
+  --color-forest-800: #1b3d20;
+  --color-forest-900: #112814;
+
+  --color-mist: #eef3ef;
+  --color-bark: #3f2d20;
+  --color-accent: #f6b042;
+  --color-yuzu: #e7d27a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-bark);
+  background: linear-gradient(180deg, #ffffff 0%, var(--color-mist) 100%);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+}
+
+/* 霧のオーバーレイ */
+.mist-overlay {
+  background: radial-gradient(
+      ellipse at top,
+      rgba(255, 255, 255, 0.85) 0%,
+      rgba(255, 255, 255, 0) 60%
+    ),
+    radial-gradient(
+      ellipse at bottom,
+      rgba(238, 243, 239, 0.9) 0%,
+      rgba(238, 243, 239, 0) 70%
+    );
+}
+
+.section-anchor {
+  scroll-margin-top: 5rem;
+}
