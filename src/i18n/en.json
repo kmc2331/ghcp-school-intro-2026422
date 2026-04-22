@@ -76,6 +76,11 @@
   "access": {
     "kicker": "Access",
     "title": "Access",
+    "labels": {
+      "address": "Address",
+      "byCar": "By car",
+      "byBus": "By bus"
+    },
     "address": "Kamiyama-cho, Myozai-gun, Tokushima 771-3310 (demo address)",
     "byCar": "About 45 min by car from central Tokushima",
     "byBus": "About 75 min by bus from JR Tokushima Station"
@@ -84,7 +89,8 @@
     "kicker": "News",
     "title": "Announcements",
     "lead": "Latest topics from the school (placeholders).",
-    "more": "All announcements"
+    "more": "All announcements",
+    "readMore": "Read more"
   },
   "contact": {
     "kicker": "Contact",
@@ -95,7 +101,10 @@
     "social": "Follow on social"
   },
   "footer": {
-    "rights": "© 2026 Unofficial Demo Site",
-    "builtWith": "Built with Astro on GitHub Pages"
+    "rights": "© Unofficial Demo Site",
+    "builtWith": "Built with Astro on GitHub Pages",
+    "navigate": "Navigate",
+    "connect": "Connect",
+    "unofficial": "Unofficial demo · Not affiliated with Kamiyama Marugoto College of Technology."
   }
 }

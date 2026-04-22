@@ -16,11 +16,10 @@ export function getDict(lang: Lang): Dict {
  * Anything under `/en/` is English; everything else is Japanese.
  */
 export function getLangFromUrl(url: URL): Lang {
-  const [, maybeLocale] = url.pathname.split('/').filter(Boolean).slice(
-    // strip the base prefix segment if present
-    url.pathname.startsWith(import.meta.env.BASE_URL)
-      ? Math.max(0, import.meta.env.BASE_URL.split('/').filter(Boolean).length - 0)
-      : 0
+  const baseSegments = import.meta.env.BASE_URL.split('/').filter(Boolean).length;
+  const [maybeLocale] = url.pathname.split('/').filter(Boolean).slice(
+    // strip the base prefix segments if present
+    url.pathname.startsWith(import.meta.env.BASE_URL) ? baseSegments : 0
   );
   return maybeLocale === 'en' ? 'en' : 'ja';
 }

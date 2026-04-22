@@ -20,7 +20,7 @@ const year = new Date().getFullYear();
       <p class="mt-4 text-mist/70 text-sm leading-relaxed">{d.disclaimer}</p>
     </div>
     <div class="text-sm">
-      <p class="kicker text-sand">Navigate</p>
+      <p class="kicker text-sand">{d.footer.navigate}</p>
       <ul class="mt-3 space-y-2 text-mist/80">
         <li><a href="#about" class="hover:text-mist">{d.nav.about}</a></li>
         <li><a href="#curriculum" class="hover:text-mist">{d.nav.curriculum}</a></li>
@@ -29,7 +29,7 @@ const year = new Date().getFullYear();
       </ul>
     </div>
     <div class="text-sm">
-      <p class="kicker text-sand">Connect</p>
+      <p class="kicker text-sand">{d.footer.connect}</p>
       <ul class="mt-3 flex gap-3">
         <li><a href="#" aria-label="X / Twitter" class="rounded-full border border-mist/30 hover:border-mist p-2 inline-flex">𝕏</a></li>
         <li><a href="#" aria-label="Instagram" class="rounded-full border border-mist/30 hover:border-mist p-2 inline-flex">IG</a></li>
@@ -41,6 +41,6 @@ const year = new Date().getFullYear();
   </div>
   <div class="mx-auto max-w-7xl px-6 mt-12 pt-6 border-t border-mist/15 flex flex-wrap items-center justify-between gap-3 text-xs text-mist/60">
     <p>{d.footer.rights} · {year}</p>
-    <p>Unofficial demo · Not affiliated with Kamiyama Marugoto College of Technology.</p>
+    <p>{d.footer.unofficial}</p>
   </div>
 </footer>

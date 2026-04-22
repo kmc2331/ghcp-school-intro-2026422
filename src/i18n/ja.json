@@ -76,6 +76,11 @@
   "access": {
     "kicker": "Access",
     "title": "アクセス",
+    "labels": {
+      "address": "住所",
+      "byCar": "車の場合",
+      "byBus": "バスの場合"
+    },
     "address": "〒771-3310 徳島県名西郡神山町（デモ用住所）",
     "byCar": "徳島市内から車で約45分",
     "byBus": "JR徳島駅前から路線バス約75分"
@@ -84,7 +89,8 @@
     "kicker": "News",
     "title": "お知らせ",
     "lead": "学校からの最新トピックス（プレースホルダ）。",
-    "more": "すべてのお知らせ"
+    "more": "すべてのお知らせ",
+    "readMore": "続きを読む"
   },
   "contact": {
     "kicker": "Contact",
@@ -95,7 +101,10 @@
     "social": "SNSをフォロー"
   },
   "footer": {
-    "rights": "© 2026 Unofficial Demo Site",
-    "builtWith": "Built with Astro on GitHub Pages"
+    "rights": "© Unofficial Demo Site",
+    "builtWith": "Built with Astro on GitHub Pages",
+    "navigate": "ナビゲーション",
+    "connect": "SNS",
+    "unofficial": "非公式デモ・神山まるごと高専とは無関係です。"
   }
 }

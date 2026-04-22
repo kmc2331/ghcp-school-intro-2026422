@@ -3,7 +3,7 @@ import { localizedPath, type Lang } from '~/i18n/utils';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 
-// Try to keep current path's hash by toggling root + /en/
+// Link to each language's localized site root.
 const jaHref = localizedPath('ja', '/');
 const enHref = localizedPath('en', '/');
 ---
