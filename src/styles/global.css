@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bark: #3F2E1E;
+  --color-moss: #5C7A4E;
+  --color-sand: #E8DFCF;
+  --color-mist: #F5F2EB;
+  --color-stone: #7A7466;
+  --color-moss-dark: #3E5A33;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--color-mist);
+  color: var(--color-bark);
+  font-family: 'Noto Sans JP', system-ui, sans-serif;
+  font-feature-settings: 'palt';
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Fraunces', 'Noto Serif JP', serif;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Subtle grain overlay for warmth */
+.grain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(63, 46, 30, 0.04) 1px, transparent 1px);
+  background-size: 3px 3px;
+  mix-blend-mode: multiply;
+}
+
+/* Underline anim for nav links */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.nav-link:hover::after { transform: scaleX(1); }
+
+/* Marquee for kicker text */
+.kicker {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: var(--color-moss-dark);
+}

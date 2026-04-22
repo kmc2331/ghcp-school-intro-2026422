@@ -1,0 +1,101 @@
+{
+  "site": {
+    "title": "Kamiyama Marugoto College of Technology (Unofficial Demo)",
+    "description": "Technology, Design, and Entrepreneurship. A 5-year private college nested in the mountains of Kamiyama, Tokushima."
+  },
+  "nav": {
+    "about": "About",
+    "curriculum": "Curriculum",
+    "campus": "Campus",
+    "faculty": "Faculty",
+    "admissions": "Admissions",
+    "access": "Access",
+    "news": "News",
+    "contact": "Contact"
+  },
+  "lang": { "ja": "JP", "en": "EN" },
+  "disclaimer": "This site is an unofficial demo and is NOT the official website of Kamiyama Marugoto College of Technology.",
+  "hero": {
+    "kicker": "Kamiyama Marugoto College of Technology",
+    "title": "Five years to learn\nfrom mountains and forests.",
+    "lead": "Technology, Design, Entrepreneurship.\nWe nurture the power to move society forward, surrounded by the nature of Kamiyama.",
+    "ctaPrimary": "Get to know us",
+    "ctaSecondary": "Admissions"
+  },
+  "about": {
+    "kicker": "About",
+    "title": "A college that raises makers who start things",
+    "lead": "Opened in 2023 in Kamiyama, Tokushima — a 5-year private college of technology with on-campus housing for all students.",
+    "points": [
+      { "title": "Opened in April 2023", "body": "The first new KOSEN founded in 55 years, born in Kamiyama, Tokushima." },
+      { "title": "5-year integrated, full residential", "body": "From age 15, students live and learn together as a community for five years." },
+      { "title": "Aiming for fully subsidized tuition", "body": "Through a strong scholarship program, we aim to enable any student to attend." },
+      { "title": "Rooted in nature & community", "body": "Hands-on learning that emerges from the mountains, rivers, and people of Kamiyama." }
+    ],
+    "note": "* Summary content based on publicly available information, for demo purposes."
+  },
+  "curriculum": {
+    "kicker": "Curriculum",
+    "title": "Three pillars to sharpen the power to make",
+    "lead": "Technology, Design, and Entrepreneurship — woven together to span ideation, implementation, and real-world impact.",
+    "items": [
+      { "title": "Technology", "body": "Programming, AI, electronics. Build working things with your own hands.", "icon": "cpu" },
+      { "title": "Design", "body": "Observation and editing — designing the space between people and society.", "icon": "palette" },
+      { "title": "Entrepreneurship", "body": "Turn ideas into ventures, from prototyping to financial planning.", "icon": "rocket" }
+    ]
+  },
+  "campus": {
+    "kicker": "Campus",
+    "title": "A campus in the mountains",
+    "lead": "Forests, rice terraces, rivers — nature itself becomes the textbook."
+  },
+  "faculty": {
+    "kicker": "Faculty",
+    "title": "Practitioners who have shipped in the field",
+    "lead": "Educators, engineers, designers, founders — practitioners walking alongside students.",
+    "note": "* The members below are fictional placeholders.",
+    "members": [
+      { "name": "Aoi Yamaguchi", "role": "President / Educator" },
+      { "name": "Ren Sakuma", "role": "Head of Technology" },
+      { "name": "Yui Miyake", "role": "Head of Design" },
+      { "name": "Daichi Fujiwara", "role": "Head of Entrepreneurship" }
+    ]
+  },
+  "admissions": {
+    "kicker": "Admissions",
+    "title": "Admissions (placeholder)",
+    "lead": "An overview of the application process. Refer to official sources for details.",
+    "steps": [
+      { "title": "Application Open", "date": "Sep – Oct", "body": "Submit your entry online." },
+      { "title": "First Screening", "date": "Nov", "body": "Document review and assignment submission." },
+      { "title": "Second Screening", "date": "Dec", "body": "Interview and group work." },
+      { "title": "Results", "date": "Jan", "body": "Admitted students receive orientation details." },
+      { "title": "Enrollment", "date": "Apr", "body": "Entrance ceremony and dormitory life begins on the Kamiyama campus." }
+    ]
+  },
+  "access": {
+    "kicker": "Access",
+    "title": "Access",
+    "address": "Kamiyama-cho, Myozai-gun, Tokushima 771-3310 (demo address)",
+    "byCar": "About 45 min by car from central Tokushima",
+    "byBus": "About 75 min by bus from JR Tokushima Station"
+  },
+  "news": {
+    "kicker": "News",
+    "title": "Announcements",
+    "lead": "Latest topics from the school (placeholders).",
+    "more": "All announcements"
+  },
+  "contact": {
+    "kicker": "Contact",
+    "title": "Learn more about Kamiyama.",
+    "lead": "For brochures and campus visits, please reach out below.",
+    "email": "Email us",
+    "form": "Request a brochure",
+    "social": "Follow on social"
+  },
+  "footer": {
+    "rights": "© 2026 Unofficial Demo Site",
+    "builtWith": "Built with Astro on GitHub Pages"
+  }
+}
